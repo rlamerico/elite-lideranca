@@ -284,8 +284,8 @@ function Index() {
           </h2>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {[turma1, turma2].map((src, i) => (
-              <div key={i} className="relative overflow-hidden border border-sage/40">
-                <img src={src} alt={`Turma ${i + 1}`} className="h-full w-full object-cover" loading="lazy" />
+              <div key={i} className="relative flex items-center justify-center overflow-hidden border border-sage/40 bg-sage/5">
+                <img src={src} alt={`Turma ${i + 1}`} className="max-h-[400px] w-full object-contain" loading="lazy" />
               </div>
             ))}
           </div>
