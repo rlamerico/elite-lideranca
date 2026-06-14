@@ -75,30 +75,30 @@ function Index() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-10">
           <div className="flex items-center gap-3 border-l-2 border-sage pl-3">
             <div>
-              <p className="text-[11px] font-semibold tracking-[0.28em] text-cream">PAULA TAMARA</p>
-              <p className="text-[9px] tracking-[0.32em] text-sage">EDUCAÇÃO EMPRESARIAL</p>
+              <p className="text-[11px] font-semibold tracking-[0.28em] text-navy-deep">PAULA TAMARA</p>
+              <p className="text-[9px] tracking-[0.32em] text-sage-deep">EDUCAÇÃO EMPRESARIAL</p>
             </div>
           </div>
-          <div className="hidden border border-sage/40 px-4 py-2 text-[11px] tracking-[0.28em] text-cream md:block">
+          <div className="hidden border border-sage/60 px-4 py-2 text-[11px] tracking-[0.28em] text-navy-deep md:block">
             13 &amp; 14 JUL · 2026
           </div>
         </div>
       </header>
 
       {/* HERO */}
-      <section className="relative overflow-hidden bg-navy-deep text-cream">
+      <section className="relative overflow-hidden bg-cream text-navy-deep">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-[0.06]"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.6) 1px, transparent 0)",
+              "radial-gradient(circle at 1px 1px, rgba(20,20,40,0.5) 1px, transparent 0)",
             backgroundSize: "3px 3px",
           }}
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-40 top-1/3 h-[520px] w-[520px] rounded-full bg-sage/10 blur-3xl"
+          className="pointer-events-none absolute -right-40 top-1/3 h-[520px] w-[520px] rounded-full bg-sage/20 blur-3xl"
         />
         <div className="relative mx-auto max-w-7xl px-6 pb-24 pt-40 md:px-10 md:pb-32 md:pt-44">
           <div className="grid items-end gap-16 lg:grid-cols-[1.4fr_1fr]">
@@ -108,26 +108,26 @@ function Index() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="mt-8 font-display text-[clamp(4.5rem,15vw,11rem)] font-semibold leading-[0.85] tracking-tight text-cream"
+                className="mt-8 font-display text-[clamp(4.5rem,15vw,11rem)] font-semibold leading-[0.85] tracking-tight text-navy-deep"
               >
                 E.LI.TE
               </motion.h1>
               <div className="mt-6 flex items-center gap-4">
-                <span className="h-px w-16 bg-sage" />
+                <span className="h-px w-16 bg-sage-deep" />
                 <p className="text-sm tracking-[0.4em]">
-                  <span className="text-cream">E</span>
-                  <span className="text-sage">volua</span>{" "}
-                  <span className="text-cream">LI</span>
-                  <span className="text-sage">dere</span>{" "}
-                  <span className="text-cream">T</span>
-                  <span className="text-sage">ransform</span>
-                  <span className="text-cream">E</span>
+                  <span className="text-navy-deep">E</span>
+                  <span className="text-sage-deep">volua</span>{" "}
+                  <span className="text-navy-deep">LI</span>
+                  <span className="text-sage-deep">dere</span>{" "}
+                  <span className="text-navy-deep">T</span>
+                  <span className="text-sage-deep">ransform</span>
+                  <span className="text-navy-deep">E</span>
                 </p>
               </div>
-              <p className="mt-10 max-w-xl font-display text-2xl leading-snug text-cream/95 md:text-3xl">
-                Liderança não se improvisa — <em className="not-italic text-sage">se desenvolve.</em>
+              <p className="mt-10 max-w-xl font-display text-2xl leading-snug text-navy-deep md:text-3xl">
+                Liderança não se improvisa — <em className="not-italic text-sage-deep">se desenvolve.</em>
               </p>
-              <p className="mt-5 max-w-lg text-base leading-relaxed text-cream/70">
+              <p className="mt-5 max-w-lg text-base leading-relaxed text-navy-deep/70">
                 Transforme a forma como você comunica, engaja e gera resultados através das pessoas.
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -135,14 +135,14 @@ function Index() {
                   href={WA_INSCRICOES}
                   target="_blank"
                   rel="noreferrer"
-                  className="group inline-flex items-center gap-3 bg-sage px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-navy-deep transition hover:bg-cream"
+                  className="group inline-flex items-center gap-3 bg-navy-deep px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-cream transition hover:bg-sage-deep"
                 >
                   Garantir minha vaga
                   <span aria-hidden className="transition group-hover:translate-x-1">→</span>
                 </a>
                 <a
                   href="#conteudo"
-                  className="text-sm uppercase tracking-[0.2em] text-cream/80 underline-offset-8 hover:underline"
+                  className="text-sm uppercase tracking-[0.2em] text-navy-deep/80 underline-offset-8 hover:underline"
                 >
                   Ver o conteúdo
                 </a>
@@ -150,22 +150,22 @@ function Index() {
             </div>
 
             {/* meta column */}
-            <div className="grid grid-cols-2 gap-px border border-sage/20 bg-sage/20 text-cream lg:mb-2">
+            <div className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep lg:mb-2">
               {[
                 { k: "Datas", v: "13 e 14 jul · 2026" },
                 { k: "Horário", v: "14h às 18h · 8h" },
                 { k: "Local", v: "ACC · Cachoeirinha/RS" },
                 { k: "Vagas", v: "Limitadas" },
               ].map((it) => (
-                <div key={it.k} className="bg-navy-deep p-6">
-                  <p className="text-[10px] tracking-[0.28em] text-sage">{it.k.toUpperCase()}</p>
+                <div key={it.k} className="bg-cream p-6">
+                  <p className="text-[10px] tracking-[0.28em] text-sage-deep">{it.k.toUpperCase()}</p>
                   <p className="mt-2 font-display text-lg">{it.v}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <div className="absolute inset-x-0 bottom-0 h-px bg-sage/30" />
+        <div className="absolute inset-x-0 bottom-0 h-px bg-sage/50" />
       </section>
 
       {/* PILARES */}
