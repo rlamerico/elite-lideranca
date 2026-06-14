@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import paulaImg from "@/assets/paula.jpg";
-import turma1 from "@/assets/turma-1.jpg";
-import turma2 from "@/assets/turma-2.jpg";
+import paulaAsset from "@/assets/paula.png.asset.json";
+import turma1Asset from "@/assets/turma-1.jpg.asset.json";
+import turma2Asset from "@/assets/turma-2.jpg.asset.json";
+const paulaImg = paulaAsset.url;
+const turma1 = turma1Asset.url;
+const turma2 = turma2Asset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
