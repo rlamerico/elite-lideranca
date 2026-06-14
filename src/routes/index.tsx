@@ -27,9 +27,9 @@ export const Route = createFileRoute("/")({
 });
 
 const WA_INSCRICOES =
-  "https://wa.me/555181192510?text=Ol%C3%A1%2C+quero+mais+informa%C3%A7%C3%B5es+sobre+o+curso+E.LI.TE";
+  "https://wa.me/5551981192510?text=Ol%C3%A1%2C+quero+mais+informa%C3%A7%C3%B5es+sobre+o+curso+ELITE";
 const WA_ACC =
-  "https://wa.me/5551985778553?text=Ol%C3%A1%2C+sou+s%C3%B3cio+da+ACC+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+E.LI.TE";
+  "https://wa.me/5551985778553?text=Ol%C3%A1%2C+sou+s%C3%B3cio+da+ACC+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+ELITE";
 const SYMPLA_URL =
   "https://www.sympla.com.br/evento/treinamento-elite-lideranca-e-gestao-de-pessoas/3461447";
 
@@ -309,11 +309,10 @@ function Index() {
             {lotes.map((l) => (
               <div
                 key={l.lote}
-                className={`relative flex flex-col border p-8 transition ${
-                  l.destaque
-                    ? "border-sage bg-sage/5"
-                    : "border-cream/15 hover:border-sage/60"
-                }`}
+                className={`relative flex flex-col border p-8 transition ${l.destaque
+                  ? "border-sage bg-sage/5"
+                  : "border-cream/15 hover:border-sage/60"
+                  }`}
               >
                 {l.tag && (
                   <span className="absolute -top-3 left-8 bg-sage px-3 py-1 text-[10px] tracking-[0.28em] text-navy-deep">
