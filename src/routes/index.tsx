@@ -27,7 +27,7 @@ export const Route = createFileRoute("/")({
 });
 
 const WA_INSCRICOES =
-  "https://wa.me/5551981192510?text=Ol%C3%A1%2C+quero+mais+informa%C3%A7%C3%B5es+sobre+o+curso+ELITE";
+  "https://wa.me/5551998119251?text=Ol%C3%A1%2C+quero+mais+informa%C3%A7%C3%B5es+sobre+o+curso+ELITE";
 const WA_ACC =
   "https://wa.me/5551985778553?text=Ol%C3%A1%2C+sou+s%C3%B3cio+da+ACC+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+ELITE";
 const SYMPLA_URL =
@@ -371,7 +371,7 @@ function Index() {
             >
               <span>
                 <span className="block text-[10px] tracking-[0.3em]">MAIORES INFORMAÇÕES</span>
-                <span className="mt-1 block font-display text-2xl">+55 51 8119-2510</span>
+                <span className="mt-1 block font-display text-2xl">+55 51 99811-9251</span>
               </span>
               <span aria-hidden className="text-xl transition group-hover:translate-x-1">→</span>
             </a>
