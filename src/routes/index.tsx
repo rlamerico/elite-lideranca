@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-const paulaImg = "/Paula.png";
+const paulaImg = "/Paula.JPG";
 const turma1 = "/turma1.jpeg";
 const turma2 = "/turma2.jpeg";
 
