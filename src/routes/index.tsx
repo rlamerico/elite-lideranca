@@ -1,11 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import paulaAsset from "@/assets/paula.png.asset.json";
-import turma1Asset from "@/assets/turma-1.jpg.asset.json";
-import turma2Asset from "@/assets/turma-2.jpg.asset.json";
-const paulaImg = paulaAsset.url;
-const turma1 = turma1Asset.url;
-const turma2 = turma2Asset.url;
+const paulaImg = "/paula.png";
+const turma1 = "/turma-1.jpg";
+const turma2 = "/turma-2.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,9 +27,9 @@ export const Route = createFileRoute("/")({
 });
 
 const WA_INSCRICOES =
-  "https://wa.me/5551981192510?text=Ol%C3%A1%2C+quero+mais+informa%C3%A7%C3%B5es+sobre+o+curso+E.LI.TE";
+  "https://wa.me/51981192510?text=Ol%C3%A1%2C+quero+mais+informa%C3%A7%C3%B5es+sobre+o+curso+E.LI.TE";
 const WA_ACC =
-  "https://wa.me/5551857785530?text=Ol%C3%A1%2C+sou+s%C3%B3cio+da+ACC+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+E.LI.TE";
+  "https://wa.me/51985778553?text=Ol%C3%A1%2C+sou+s%C3%B3cio+da+ACC+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+E.LI.TE";
 const SYMPLA_URL =
   "https://www.sympla.com.br/evento/treinamento-elite-lideranca-e-gestao-de-pessoas/3461447";
 
