@@ -27,9 +27,11 @@ export const Route = createFileRoute("/")({
 });
 
 const WA_INSCRICOES =
-  "https://wa.me/5551981192510?text=Ol%C3%A1%2C+quero+garantir+minha+vaga+no+curso+E.LI.TE";
+  "https://wa.me/5551981192510?text=Ol%C3%A1%2C+quero+mais+informa%C3%A7%C3%B5es+sobre+o+curso+E.LI.TE";
 const WA_ACC =
-  "https://wa.me/5551857785530?text=Ol%C3%A1%2C+sou+s%C3%B3cio+da+ACC+e+quero+me+inscrever+no+E.LI.TE";
+  "https://wa.me/5551857785530?text=Ol%C3%A1%2C+sou+s%C3%B3cio+da+ACC+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+E.LI.TE";
+const SYMPLA_URL =
+  "https://www.sympla.com.br/evento/treinamento-elite-lideranca-e-gestao-de-pessoas/3461447";
 
 const pilares = [
   { n: "01", t: "Comunicação e Feedback", d: "Diálogos claros e feedbacks que desenvolvem o time sem desmotivar." },
@@ -132,7 +134,7 @@ function Index() {
               </p>
               <div className="mt-10 flex flex-wrap items-center gap-4">
                 <a
-                  href={WA_INSCRICOES}
+                  href={SYMPLA_URL}
                   target="_blank"
                   rel="noreferrer"
                   className="group inline-flex items-center gap-3 bg-navy-deep px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-cream transition hover:bg-sage-deep"
@@ -325,6 +327,20 @@ function Index() {
             ))}
           </div>
           <p className="mt-8 text-sm text-sage">Condições especiais para sócios da ACC.</p>
+          <div className="mt-10 flex flex-wrap items-center gap-4">
+            <a
+              href={SYMPLA_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-3 bg-sage px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-navy-deep transition hover:bg-cream"
+            >
+              Inscrever-se pelo Sympla
+              <span aria-hidden className="transition group-hover:translate-x-1">→</span>
+            </a>
+            <span className="text-xs uppercase tracking-[0.24em] text-cream/60">
+              Pagamento seguro · parcelamento disponível
+            </span>
+          </div>
         </div>
       </section>
 
@@ -333,11 +349,19 @@ function Index() {
         <div className="mx-auto grid max-w-7xl gap-12 border-t border-sage/20 px-6 py-20 md:grid-cols-[1.2fr_1fr] md:px-10 md:py-24">
           <div>
             <Eyebrow>Próximo passo</Eyebrow>
-            <h2 className="mt-4 font-display text-5xl md:text-6xl">Garanta sua vaga</h2>
+            <h2 className="mt-4 font-display text-5xl md:text-6xl">Fale com a gente</h2>
             <p className="mt-5 max-w-md text-cream/75">
-              Vagas limitadas · inscrições pelo WhatsApp. Fale com a nossa equipe e dê o próximo
-              passo na sua jornada como líder.
+              Inscrições pelo Sympla. Para tirar dúvidas e receber mais informações sobre o curso,
+              fale com a nossa equipe pelo WhatsApp.
             </p>
+            <a
+              href={SYMPLA_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center gap-3 text-sm uppercase tracking-[0.24em] text-sage underline-offset-8 hover:underline"
+            >
+              Ir para inscrição no Sympla →
+            </a>
           </div>
           <div className="flex flex-col gap-4 self-center">
             <a
@@ -347,7 +371,7 @@ function Index() {
               className="group flex items-center justify-between border border-sage bg-sage px-6 py-5 text-navy-deep transition hover:bg-cream hover:border-cream"
             >
               <span>
-                <span className="block text-[10px] tracking-[0.3em]">INSCRIÇÕES</span>
+                <span className="block text-[10px] tracking-[0.3em]">MAIORES INFORMAÇÕES</span>
                 <span className="mt-1 block font-display text-2xl">+55 51 98119-2510</span>
               </span>
               <span aria-hidden className="text-xl transition group-hover:translate-x-1">→</span>
@@ -359,7 +383,7 @@ function Index() {
               className="group flex items-center justify-between border border-sage/50 px-6 py-5 text-cream transition hover:border-sage hover:bg-sage/10"
             >
               <span>
-                <span className="block text-[10px] tracking-[0.3em] text-sage">SÓCIOS DA ACC</span>
+                <span className="block text-[10px] tracking-[0.3em] text-sage">MAIORES INFORMAÇÕES · SÓCIOS ACC</span>
                 <span className="mt-1 block font-display text-2xl">+55 51 98577-8553</span>
               </span>
               <span aria-hidden className="text-xl transition group-hover:translate-x-1">→</span>
