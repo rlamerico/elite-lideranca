@@ -80,7 +80,7 @@ function Index() {
             </div>
           </div>
           <div className="hidden border border-sage/40 px-4 py-2 text-[11px] tracking-[0.28em] text-cream md:block">
-            13 &amp; 14 JUL · 2025
+            13 &amp; 14 JUL · 2026
           </div>
         </div>
       </header>
@@ -152,7 +152,7 @@ function Index() {
             {/* meta column */}
             <div className="grid grid-cols-2 gap-px border border-sage/20 bg-sage/20 text-cream lg:mb-2">
               {[
-                { k: "Datas", v: "13 e 14 jul · 2025" },
+                { k: "Datas", v: "13 e 14 jul · 2026" },
                 { k: "Horário", v: "14h às 18h · 8h" },
                 { k: "Local", v: "ACC · Cachoeirinha/RS" },
                 { k: "Vagas", v: "Limitadas" },
@@ -371,7 +371,7 @@ function Index() {
       {/* FOOTER */}
       <footer className="bg-navy-deep text-cream/60">
         <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-4 px-6 py-8 text-xs tracking-[0.18em] md:flex-row md:items-center md:px-10">
-          <p>© 2025 PAULA TAMARA · EDUCAÇÃO EMPRESARIAL</p>
+          <p>© 2026 PAULA TAMARA · EDUCAÇÃO EMPRESARIAL</p>
           <p className="text-sage">CONSULTORIA · TREINAMENTO · LIDERANÇA</p>
         </div>
       </footer>
