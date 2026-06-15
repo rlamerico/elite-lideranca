@@ -105,7 +105,7 @@ function Index() {
         <div className="relative mx-auto max-w-7xl px-6 pb-24 pt-40 md:px-10 md:pb-32 md:pt-44">
           <div className="grid items-end gap-16 lg:grid-cols-[1.4fr_1fr]">
             <div>
-              <Eyebrow>Curso Presencial de Liderança · 8 horas</Eyebrow>
+              <Eyebrow>Curso Presencial de Liderança · 8&nbsp;horas</Eyebrow>
               <motion.h1
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
