@@ -244,7 +244,7 @@ function Index() {
             />
           </div>
           <div>
-            <Eyebrow>A instrutora</Eyebrow>
+            <Eyebrow>A treinadora</Eyebrow>
             <h2 className="mt-6 font-display text-5xl md:text-6xl">Paula Tamara</h2>
             <div className="mt-6 space-y-5 text-base leading-relaxed text-navy-deep/85">
               <p>
