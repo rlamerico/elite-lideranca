@@ -56,9 +56,9 @@ const voceLeva = [
 ];
 
 const lotes = [
-  { lote: "1º LOTE", preco: "R$ 780", parcelas: "em até 12x", destaque: true, tag: "MELHOR PREÇO" },
-  { lote: "2º LOTE", preco: "R$ 890", parcelas: "em até 12x", destaque: false },
-  { lote: "3º LOTE", preco: "R$ 1.190", parcelas: "em até 12x", destaque: false },
+  { lote: "1º LOTE", preco: "12x R$ 80,67", parcelas: "ou R$ 780 à vista", destaque: true, tag: "MELHOR PREÇO" },
+  { lote: "2º LOTE", preco: "12x R$ 92,05", parcelas: "ou R$ 890 à vista", destaque: false },
+  { lote: "3º LOTE", preco: "12x R$ 123,07", parcelas: "ou R$ 1.190 à vista", destaque: false },
 ];
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
@@ -307,11 +307,14 @@ function Index() {
 
           <div className="mt-14 grid gap-5 md:grid-cols-3">
             {lotes.map((l) => (
-              <div
+              <a
+                href={SYMPLA_URL}
+                target="_blank"
+                rel="noreferrer"
                 key={l.lote}
                 className={`relative flex flex-col border p-8 transition ${l.destaque
-                  ? "border-sage bg-sage/5"
-                  : "border-cream/15 hover:border-sage/60"
+                  ? "border-sage bg-sage/5 hover:bg-sage/10"
+                  : "border-cream/15 hover:border-sage/60 hover:bg-cream/5"
                   }`}
               >
                 {l.tag && (
@@ -320,9 +323,9 @@ function Index() {
                   </span>
                 )}
                 <p className="text-[11px] tracking-[0.32em] text-sage">{l.lote}</p>
-                <p className="mt-8 font-display text-6xl font-medium text-cream">{l.preco}</p>
+                <p className="mt-8 font-display text-4xl md:text-5xl font-medium text-cream">{l.preco}</p>
                 <p className="mt-3 text-sm text-cream/60">{l.parcelas}</p>
-              </div>
+              </a>
             ))}
           </div>
           <p className="mt-8 text-sm text-sage">Condições especiais para sócios da ACC.</p>
