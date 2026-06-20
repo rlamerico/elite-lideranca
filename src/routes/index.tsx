@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Gift } from "lucide-react";
 const paulaImg = "/Paula.JPG";
 const turma1 = "/turma1.jpeg";
 const turma2 = "/turma2.jpeg";
+const discReport = "/disc-report.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -109,6 +111,13 @@ const numeros = [
   { v: "+15 anos", k: "de experiência em gestão" },
   { v: "Brasil & exterior", k: "alcance dos treinamentos" },
   { v: "100% presencial", k: "prática e mão na massa" },
+];
+
+const disc = [
+  { letter: "D", name: "Dominância", desc: "Foco em resultado e decisão.", color: "#C0492F" },
+  { letter: "I", name: "Influência", desc: "Comunicação e relacionamento.", color: "#E0A93B" },
+  { letter: "C", name: "Conformidade", desc: "Precisão e análise.", color: "#5B8AAE" },
+  { letter: "S", name: "Estabilidade", desc: "Constância e cooperação.", color: "#8C9670" },
 ];
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
@@ -360,6 +369,79 @@ function Index() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* BÔNUS DISC */}
+      <section className="relative overflow-hidden bg-navy-deep py-24 text-cream md:py-32">
+        <span
+          aria-hidden
+          className="pointer-events-none absolute -top-10 left-0 select-none font-display text-[30vw] font-bold leading-none text-cream/[0.035] md:text-[18rem]"
+        >
+          DISC
+        </span>
+        <div className="relative mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal>
+            <div className="flex items-center justify-between gap-4">
+              <span className="inline-flex items-center bg-cream/10 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.28em] text-cream">
+                Bônus Exclusivo
+              </span>
+              <Gift aria-hidden className="h-6 w-6 text-sage" />
+            </div>
+            <p className="mt-8 text-[11px] uppercase tracking-[0.28em] text-sage">
+              Incluso na sua inscrição
+            </p>
+            <h2 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-[1.05] md:text-6xl">
+              Análise de Perfil Comportamental <span className="text-sage">DISC</span>
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-cream/75 md:text-lg">
+              Cada líder receberá um{" "}
+              <strong className="font-semibold text-cream">relatório completo</strong> sobre o seu
+              perfil comportamental, suas maiores forças e os principais pontos de melhoria.
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <figure className="mt-12">
+              <div className="border border-sage/30 bg-[#0a1422] p-2.5">
+                <img
+                  src={discReport}
+                  alt="Exemplo de relatório DISC — análise de perfil comportamental"
+                  className="block h-auto w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption className="mt-3 text-center text-xs text-cream/50">
+                Exemplo de relatório individual — entregue a cada participante
+              </figcaption>
+            </figure>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <p className="mt-16 text-[11px] uppercase tracking-[0.28em] text-sage">
+              Os 4 perfis que você vai entender
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-px border border-cream/10 bg-cream/10 lg:grid-cols-4">
+              {disc.map((p) => (
+                <div
+                  key={p.letter}
+                  className="bg-navy-deep px-5 py-6"
+                  style={{ borderTop: `3px solid ${p.color}` }}
+                >
+                  <span
+                    className="font-display text-4xl font-bold leading-none"
+                    style={{ color: p.color }}
+                  >
+                    {p.letter}
+                  </span>
+                  <h3 className="mt-3 text-sm font-semibold uppercase tracking-wide text-cream">
+                    {p.name}
+                  </h3>
+                  <p className="mt-1.5 text-[13px] leading-snug text-cream/55">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
