@@ -1,51 +1,44 @@
 # 🚀 Elite Liderança - Landing Page
 
-Uma landing page moderna, responsiva e de alta conversão desenvolvida para a plataforma **Elite Liderança**. O projeto foi estruturado com foco em performance, componentização e tipagem estática.
+A modern, responsive, and high-converting landing page developed for the **Elite Liderança** platform. The project was structured with a focus on performance, componentization, and static typing.
 
-## 🔗 Demonstração
-Acesse o projeto renderizado e funcional aqui:  
-👉 **[Visualizar Landing Page na Vercel](https://elite-lideranca.vercel.app)** 
+## 🔗 Demo
+Access the live and functional project here:  
+👉 **[View Landing Page on Vercel](https://elite-lideranca.vercel.app)** ---
 
----
+## 🛠️ Technologies Used
 
-## 🛠️ Tecnologias Utilizadas
+The project was built using the most modern ecosystem for web development:
 
-O projeto foi construído utilizando o ecossistema mais moderno para desenvolvimento web:
-
-* **[React](https://reactjs.org/)** — Biblioteca para construção da interface baseada em componentes.
-* **[TypeScript](https://www.typescriptlang.org/)** — Superset do JavaScript que adiciona tipagem estática, garantindo maior segurança e menos bugs em produção.
-* **[Tailwind CSS](https://tailwindcss.com/)** — Framework utilitário para estilização rápida, garantindo total responsividade e performance visual.
-* **[Vite](https://vitejs.dev/)** — Build tool ultra-rápida para o ambiente de desenvolvimento e empacotamento otimizado de produção.
+* **[React](https://reactjs.org/)** — A JavaScript library for building component-based user interfaces.
+* **[TypeScript](https://www.typescriptlang.org/)** — A typed superset of JavaScript that adds static types, ensuring greater security and fewer bugs in production.
+* **[Tailwind CSS](https://tailwindcss.com/)** — A utility-first CSS framework for rapid styling, ensuring full responsiveness and visual performance.
+* **[Vite](https://vitejs.dev/)** — An ultra-fast build tool for the development environment and optimized production bundling.
 
 ---
 
-## 📦 Como Rodar o Projeto Localmente
+## 📦 How to Run the Project Locally
 
-Se quiser clonar o repositório e executar o ambiente de desenvolvimento na sua máquina, siga os passos abaixo:
+To clone the repository and run the development environment on your machine, follow the steps below:
 
-1. **Clone o repositório:**
+1. **Clone the repository:**
    ```bash
    git clone [https://github.com/rlamerico/elite-lideranca.git](https://github.com/rlamerico/elite-lideranca.git)
 
-   
+2. **Navigate to the project folder:**
 
-2. **Acesse a pasta do projeto:**
-
-Bash  
 cd elite-lideranca.
 
-3. **Instale as dependências:** 
-
-Bash  
+3. **Install the dependecies:** 
+  
 npm install
 
-4. **Inicie o servidor de desenvolvimento:** 
+4. **Start the development server:**   
 
-Bash  
 npm run dev
 
-Abra o navegador no endereço indicado pelo terminal (geralmente http://localhost:5173).  
+Access in your browser:
+Open your browser at the address indicated by the terminal (usually http://localhost:5173).  
 
-##🚀 Deploy e Infraestrutura  
-
-O deploy deste projeto é realizado de forma automatizada via Vercel através de integração contínua (CI/CD) com o GitHub. Cada atualização na branch principal dispara um novo build automaticamente.
+##🚀 Deploy and Infrastructure
+The deployment of this project is automated via Vercel through continuous integration (CI/CD) with GitHub. Every update on the main branch automatically triggers a new build.
