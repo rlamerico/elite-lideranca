@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Curso presencial de liderança em Cachoeirinha/RS, 13 e 14 de julho. 8h de conteúdo prático: comunicação, engajamento, perfil comportamental e autoliderança.",
+          "Curso presencial de liderança em Cachoeirinha/RS, 17 de agosto. 8h de conteúdo prático: comunicação, engajamento, perfil comportamental e autoliderança.",
       },
       { property: "og:title", content: "E.LI.TE — Evolua, Lidere, Transforme" },
       {
@@ -209,7 +209,7 @@ function Index() {
           </div>
           <div className="flex items-center gap-4">
             <div className="hidden border border-sage/60 px-4 py-2 text-[11px] tracking-[0.28em] text-navy-deep md:block">
-              13 &amp; 14 JUL · 2026
+              17 AGO · 2026
             </div>
             <a
               href={SYMPLA_URL}
@@ -293,8 +293,8 @@ function Index() {
             {/* meta column */}
             <div className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep lg:mb-2">
               {[
-                { k: "Datas", v: "13 e 14 jul · 2026" },
-                { k: "Horário", v: "14h às 18h · 8h" },
+                { k: "Data", v: "17 ago · 2026" },
+                { k: "Horário", v: "09h às 18h" },
                 { k: "Local", v: "ACC · Cachoeirinha/RS" },
                 { k: "Vagas", v: "Limitadas" },
               ].map((it) => (
@@ -555,10 +555,11 @@ function Index() {
                 target="_blank"
                 rel="noreferrer"
                 key={l.lote}
-                className={`relative flex flex-col border p-8 transition ${l.destaque
+                className={`relative flex flex-col border p-8 transition ${
+                  l.destaque
                     ? "border-sage bg-sage/5 hover:bg-sage/10"
                     : "border-cream/15 hover:border-sage/60 hover:bg-cream/5"
-                  }`}
+                }`}
               >
                 {l.tag && (
                   <span className="absolute -top-3 left-8 bg-sage px-3 py-1 text-[10px] tracking-[0.28em] text-navy-deep">
@@ -569,8 +570,9 @@ function Index() {
                   <p className="text-[11px] tracking-[0.32em] text-sage">{l.lote}</p>
                   {l.status && (
                     <span
-                      className={`inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.22em] ${l.destaque ? "text-sage" : "text-cream/45"
-                        }`}
+                      className={`inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.22em] ${
+                        l.destaque ? "text-sage" : "text-cream/45"
+                      }`}
                     >
                       {l.destaque && (
                         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sage" />
