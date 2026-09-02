@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Curso presencial de liderança em Cachoeirinha/RS, 17 de agosto. 8h de conteúdo prático: comunicação, engajamento, perfil comportamental e autoliderança.",
+          "Curso presencial de liderança em Cachoeirinha/RS, 10 de outubro. 8h de conteúdo prático: comunicação, engajamento, perfil comportamental e autoliderança.",
       },
       { property: "og:title", content: "E.LI.TE — Evolua, Lidere, Transforme" },
       {
@@ -209,7 +209,7 @@ function Index() {
           </div>
           <div className="flex items-center gap-4">
             <div className="hidden border border-sage/60 px-4 py-2 text-[11px] tracking-[0.28em] text-navy-deep md:block">
-              17 AGO · 2026
+              10 OUT · 2026
             </div>
             <a
               href={SYMPLA_URL}
@@ -293,8 +293,8 @@ function Index() {
             {/* meta column */}
             <div className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep lg:mb-2">
               {[
-                { k: "Data", v: "17 ago · 2026" },
-                { k: "Horário", v: "09h às 18h" },
+                { k: "Data", v: "10 out · 2026" },
+                { k: "Horário", v: "08h30 às 17h30" },
                 { k: "Local", v: "ACC · Cachoeirinha/RS" },
                 { k: "Vagas", v: "Limitadas" },
               ].map((it) => (
