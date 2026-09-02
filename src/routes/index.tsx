@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Gift } from "lucide-react";
+import { HoverPlayVideo } from "@/components/hover-play-video";
 const paulaImg = "/Paula.JPG";
 const turma1 = "/turma1.jpeg";
 const turma2 = "/turma2.jpeg";
@@ -577,16 +578,12 @@ function Index() {
               <figure className="flex h-full flex-col border border-sage/40 bg-cream">
                 <div className="relative aspect-[4/5] w-full bg-navy-deep">
                   <PlaceholderTag show={depoimentoVideoInfo.exemplo} />
-                  <video
-                    className="h-full w-full object-contain"
-                    controls
-                    preload="metadata"
-                    playsInline
+                  <HoverPlayVideo
+                    src={depoimentoVideo}
                     poster={depoimentoPoster}
-                  >
-                    <source src={depoimentoVideo} type="video/mp4" />
-                    Seu navegador não reproduz este vídeo.
-                  </video>
+                    label={`Depoimento de ${depoimentoVideoInfo.nome} sobre o curso E.LI.TE`}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <figcaption className="flex flex-1 flex-col justify-between gap-4 px-6 py-6">
                   <p className="font-display text-lg leading-snug text-navy-deep">
