@@ -30,3 +30,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Midia bruta pesada (nao vai para o repo nem para o deploy)
+public/depoimento_1.mp4

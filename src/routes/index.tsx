@@ -6,6 +6,9 @@ const paulaImg = "/Paula.JPG";
 const turma1 = "/turma1.jpeg";
 const turma2 = "/turma2.jpeg";
 const discReport = "/disc-report.jpg";
+const depoimentoVideo = "/depoimento-cliente.mp4";
+const depoimentoPoster = "/depoimento-cliente-poster.jpg";
+const feedbackPrint = "/feedback-cliente.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -119,6 +122,30 @@ const disc = [
   { letter: "C", name: "Conformidade", desc: "Precisão e análise.", color: "#5B8AAE" },
   { letter: "S", name: "Estabilidade", desc: "Constância e cooperação.", color: "#8C9670" },
 ];
+
+const depoimentoVideoInfo = {
+  nome: "Leandro",
+  cargo: "Frealle Auto Center · Área automotiva",
+  fala: "Aprendi a dar o feedback para os meus funcionários. Eu indico o E.LI.TE pra todos os líderes.",
+  exemplo: false,
+};
+
+// Conteudo provisorio: trocar pelo print real do cliente e marcar exemplo: false.
+const depoimentoPrintInfo = {
+  nome: "Ricardo Menezes",
+  cargo: "Sócio-diretor · Menezes Metalúrgica",
+  fala: "Mandei três líderes meus e vou mandar o resto da equipe na próxima turma.",
+  exemplo: true,
+};
+
+function PlaceholderTag({ show }: { show: boolean }) {
+  if (!show) return null;
+  return (
+    <span className="absolute right-3 top-3 z-10 bg-navy-deep/85 px-2.5 py-1 text-[9px] font-medium uppercase tracking-[0.22em] text-cream">
+      Exemplo
+    </span>
+  );
+}
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
@@ -532,6 +559,78 @@ function Index() {
               ))}
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* DEPOIMENTOS */}
+      <section className="bg-cream-soft py-24 md:py-28">
+        <div className="mx-auto max-w-7xl px-6 md:px-10">
+          <Reveal>
+            <Eyebrow>Na voz de quem participou</Eyebrow>
+            <h2 className="mt-5 max-w-2xl font-display text-3xl leading-tight text-navy-deep md:text-4xl">
+              O que muda na segunda-feira depois do curso
+            </h2>
+          </Reveal>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <Reveal delay={0.1}>
+              <figure className="flex h-full flex-col border border-sage/40 bg-cream">
+                <div className="relative aspect-[4/5] w-full bg-navy-deep">
+                  <PlaceholderTag show={depoimentoVideoInfo.exemplo} />
+                  <video
+                    className="h-full w-full object-contain"
+                    controls
+                    preload="metadata"
+                    playsInline
+                    poster={depoimentoPoster}
+                  >
+                    <source src={depoimentoVideo} type="video/mp4" />
+                    Seu navegador não reproduz este vídeo.
+                  </video>
+                </div>
+                <figcaption className="flex flex-1 flex-col justify-between gap-4 px-6 py-6">
+                  <p className="font-display text-lg leading-snug text-navy-deep">
+                    “{depoimentoVideoInfo.fala}”
+                  </p>
+                  <div className="border-l-2 border-sage pl-3">
+                    <p className="text-[13px] font-medium text-navy-deep">
+                      {depoimentoVideoInfo.nome}
+                    </p>
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-sage-deep">
+                      {depoimentoVideoInfo.cargo}
+                    </p>
+                  </div>
+                </figcaption>
+              </figure>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <figure className="flex h-full flex-col border border-sage/40 bg-cream">
+                <div className="relative flex min-h-0 flex-1 items-center justify-center bg-sage/5 p-5">
+                  <PlaceholderTag show={depoimentoPrintInfo.exemplo} />
+                  <img
+                    src={feedbackPrint}
+                    alt={`Mensagem de ${depoimentoPrintInfo.nome} elogiando o curso E.LI.TE`}
+                    className="h-full max-h-[640px] w-full object-contain"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption className="flex flex-col gap-4 border-t border-sage/30 px-6 py-6">
+                  <p className="font-display text-lg leading-snug text-navy-deep">
+                    “{depoimentoPrintInfo.fala}”
+                  </p>
+                  <div className="border-l-2 border-sage pl-3">
+                    <p className="text-[13px] font-medium text-navy-deep">
+                      {depoimentoPrintInfo.nome}
+                    </p>
+                    <p className="text-[11px] uppercase tracking-[0.2em] text-sage-deep">
+                      {depoimentoPrintInfo.cargo}
+                    </p>
+                  </div>
+                </figcaption>
+              </figure>
+            </Reveal>
+          </div>
         </div>
       </section>
 
