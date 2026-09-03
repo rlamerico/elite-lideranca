@@ -9,7 +9,7 @@ const turma2 = "/turma2.jpeg";
 const discReport = "/disc-report.jpg";
 const depoimentoVideo = "/depoimento-cliente.mp4";
 const depoimentoPoster = "/depoimento-cliente-poster.jpg";
-const feedbackPrint = "/feedback-cliente.png";
+const feedbackPrint = "/depoimento_whats_01.jpeg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,6 +46,22 @@ const WA_ACC =
   "https://wa.me/5551985778553?text=Ol%C3%A1%2C+sou+s%C3%B3cio+da+ACC+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+ELITE";
 const SYMPLA_URL =
   "https://www.sympla.com.br/evento/treinamento-elite-lideranca-e-gestao-de-pessoas/3461447";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const ELITE_SEGMENTS = [
+  { t: "E", d: 0.2 },
+  { t: ".", d: 0.3 },
+  { t: "LI", d: 0.36, accent: true },
+  { t: ".", d: 0.46 },
+  { t: "TE", d: 0.54 },
+];
+
+const fadeUp = (delay: number) => ({
+  initial: { opacity: 0, y: 14 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, delay, ease: EASE },
+});
 
 const pilares = [
   {
@@ -131,12 +147,11 @@ const depoimentoVideoInfo = {
   exemplo: false,
 };
 
-// Conteudo provisorio: trocar pelo print real do cliente e marcar exemplo: false.
 const depoimentoPrintInfo = {
-  nome: "Ricardo Menezes",
-  cargo: "Sócio-diretor · Menezes Metalúrgica",
-  fala: "Mandei três líderes meus e vou mandar o resto da equipe na próxima turma.",
-  exemplo: true,
+  nome: "",
+  cargo: "Participante do E.LI.TE presencial",
+  fala: "Saio de hoje com muita esperança de construir uma equipe mais autônoma e uma cultura mais forte no meu negócio.",
+  exemplo: false,
 };
 
 function PlaceholderTag({ show }: { show: boolean }) {
@@ -269,18 +284,58 @@ function Index() {
         <div className="relative mx-auto max-w-7xl px-6 pb-24 pt-40 md:px-10 md:pb-32 md:pt-44">
           <div className="grid items-end gap-16 lg:grid-cols-[1.4fr_1fr]">
             <div>
-              <Eyebrow>Curso Presencial de Liderança · 8&nbsp;horas</Eyebrow>
+              <motion.div {...fadeUp(0)}>
+                <Eyebrow>Curso Presencial de Liderança · 8&nbsp;horas</Eyebrow>
+              </motion.div>
               <motion.h1
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="mt-8 font-display text-[clamp(4.5rem,15vw,11rem)] font-semibold leading-[0.85] tracking-tight text-navy-deep"
+                initial={{ opacity: 0, letterSpacing: "0.06em" }}
+                animate={{ opacity: 1, letterSpacing: "-0.025em" }}
+                transition={{ duration: 0.9, delay: 0.2, ease: EASE }}
+                className="mt-8 font-display text-[clamp(4.5rem,15vw,11rem)] font-semibold leading-[0.85] text-navy-deep"
               >
-                E.LI.TE
+                {ELITE_SEGMENTS.map((s, i) => (
+                  <motion.span
+                    key={i}
+                    className="inline-block"
+                    initial={
+                      s.accent
+                        ? { opacity: 0, y: 8, color: "oklch(0.72 0.06 115)" }
+                        : { opacity: 0, y: 8 }
+                    }
+                    animate={
+                      s.accent
+                        ? { opacity: 1, y: 0, color: "oklch(0.17 0.04 260)" }
+                        : { opacity: 1, y: 0 }
+                    }
+                    transition={{
+                      duration: s.accent ? 1.2 : 0.5,
+                      delay: s.d,
+                      ease: EASE,
+                      color: { duration: 1.2, delay: s.d + 0.6, ease: EASE },
+                    }}
+                  >
+                    {s.t}
+                  </motion.span>
+                ))}
               </motion.h1>
-              <div className="mt-6 flex items-center gap-4">
-                <span className="h-px w-16 bg-sage-deep" />
-                <p className="text-sm tracking-[0.4em]">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.95, ease: EASE }}
+                className="mt-6 flex items-center gap-4"
+              >
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.5, delay: 0.95, ease: EASE }}
+                  className="h-px w-16 origin-left bg-sage-deep"
+                />
+                <motion.p
+                  initial={{ opacity: 0, letterSpacing: "0.08em" }}
+                  animate={{ opacity: 1, letterSpacing: "0.4em" }}
+                  transition={{ duration: 0.6, delay: 1.05, ease: EASE }}
+                  className="text-sm"
+                >
                   <span className="text-navy-deep">E</span>
                   <span className="text-sage-deep">volua</span>{" "}
                   <span className="text-navy-deep">LI</span>
@@ -288,16 +343,22 @@ function Index() {
                   <span className="text-navy-deep">T</span>
                   <span className="text-sage-deep">ransform</span>
                   <span className="text-navy-deep">E</span>
-                </p>
-              </div>
-              <p className="mt-10 max-w-xl font-display text-2xl leading-snug text-navy-deep md:text-3xl">
+                </motion.p>
+              </motion.div>
+              <motion.p
+                {...fadeUp(1.2)}
+                className="mt-10 max-w-xl font-display text-2xl leading-snug text-navy-deep md:text-3xl"
+              >
                 Liderança não se improvisa —{" "}
                 <em className="not-italic text-sage-deep">se desenvolve.</em>
-              </p>
-              <p className="mt-5 max-w-lg text-base leading-relaxed text-navy-deep/70">
+              </motion.p>
+              <motion.p
+                {...fadeUp(1.3)}
+                className="mt-5 max-w-lg text-base leading-relaxed text-navy-deep/70"
+              >
                 Transforme a forma como você comunica, engaja e gera resultados através das pessoas.
-              </p>
-              <div className="mt-10 flex flex-wrap items-center gap-4">
+              </motion.p>
+              <motion.div {...fadeUp(1.4)} className="mt-10 flex flex-wrap items-center gap-4">
                 <a
                   href={SYMPLA_URL}
                   target="_blank"
@@ -315,11 +376,14 @@ function Index() {
                 >
                   Ver o conteúdo
                 </a>
-              </div>
+              </motion.div>
             </div>
 
             {/* meta column */}
-            <div className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep lg:mb-2">
+            <motion.div
+              {...fadeUp(0.7)}
+              className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep lg:mb-2"
+            >
               {[
                 { k: "Data", v: "10 out · 2026" },
                 { k: "Horário", v: "08h30 às 17h30" },
@@ -333,7 +397,7 @@ function Index() {
                   <p className="mt-2 font-display text-lg">{it.v}</p>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className="absolute inset-x-0 bottom-0 h-px bg-sage/50" />
@@ -607,7 +671,7 @@ function Index() {
                   <PlaceholderTag show={depoimentoPrintInfo.exemplo} />
                   <img
                     src={feedbackPrint}
-                    alt={`Mensagem de ${depoimentoPrintInfo.nome} elogiando o curso E.LI.TE`}
+                    alt="Mensagem de uma participante agradecendo pelo curso E.LI.TE"
                     className="h-full max-h-[640px] w-full object-contain"
                     loading="lazy"
                   />
@@ -617,9 +681,11 @@ function Index() {
                     “{depoimentoPrintInfo.fala}”
                   </p>
                   <div className="border-l-2 border-sage pl-3">
-                    <p className="text-[13px] font-medium text-navy-deep">
-                      {depoimentoPrintInfo.nome}
-                    </p>
+                    {depoimentoPrintInfo.nome && (
+                      <p className="text-[13px] font-medium text-navy-deep">
+                        {depoimentoPrintInfo.nome}
+                      </p>
+                    )}
                     <p className="text-[11px] uppercase tracking-[0.2em] text-sage-deep">
                       {depoimentoPrintInfo.cargo}
                     </p>
