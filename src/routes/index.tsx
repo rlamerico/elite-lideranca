@@ -45,7 +45,7 @@ const WA_INSCRICOES =
 const WA_ACC =
   "https://wa.me/5551985778553?text=Ol%C3%A1%2C+sou+s%C3%B3cio+da+ACC+e+quero+mais+informa%C3%A7%C3%B5es+sobre+o+ELITE";
 const SYMPLA_URL =
-  "https://www.sympla.com.br/evento/treinamento-elite-lideranca-e-gestao-de-pessoas/3461447";
+  "https://www.sympla.com.br/evento/treinamento-elite-lideranca-e-gestao-de-pessoas-copia/3569765";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -717,11 +717,10 @@ function Index() {
                 target="_blank"
                 rel="noreferrer"
                 key={l.lote}
-                className={`relative flex flex-col border p-8 transition ${
-                  l.destaque
+                className={`relative flex flex-col border p-8 transition ${l.destaque
                     ? "border-sage bg-sage/5 hover:bg-sage/10"
                     : "border-cream/15 hover:border-sage/60 hover:bg-cream/5"
-                }`}
+                  }`}
               >
                 {l.tag && (
                   <span className="absolute -top-3 left-8 bg-sage px-3 py-1 text-[10px] tracking-[0.28em] text-navy-deep">
@@ -732,9 +731,8 @@ function Index() {
                   <p className="text-[11px] tracking-[0.32em] text-sage">{l.lote}</p>
                   {l.status && (
                     <span
-                      className={`inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.22em] ${
-                        l.destaque ? "text-sage" : "text-cream/45"
-                      }`}
+                      className={`inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.22em] ${l.destaque ? "text-sage" : "text-cream/45"
+                        }`}
                     >
                       {l.destaque && (
                         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sage" />
