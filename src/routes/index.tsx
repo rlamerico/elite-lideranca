@@ -14,24 +14,24 @@ const feedbackPrint = "/depoimento_whats_01.jpeg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "E.LI.TE — Curso Presencial de Liderança | Paula Tamara" },
+      { title: "E.LI.TE | Curso Presencial de Liderança | Paula Tamara" },
       {
         name: "description",
         content:
           "Curso presencial de liderança em Cachoeirinha/RS, 10 de outubro. 8h de conteúdo prático: comunicação, engajamento, perfil comportamental e autoliderança.",
       },
-      { property: "og:title", content: "E.LI.TE — Evolua, Lidere, Transforme" },
+      { property: "og:title", content: "E.LI.TE: Evolua, Lidere, Transforme" },
       {
         property: "og:description",
         content:
-          "Liderança não se improvisa — se desenvolve. Curso presencial de 8h com Paula Tamara em Cachoeirinha/RS.",
+          "Liderança não se improvisa, se desenvolve. Curso presencial de 8h com Paula Tamara em Cachoeirinha/RS.",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:image", content: "/Paula.JPG" },
       {
         property: "og:image:alt",
-        content: "Paula Tamara — Curso E.LI.TE de Liderança",
+        content: "Paula Tamara | Curso E.LI.TE de Liderança",
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: "/Paula.JPG" },
@@ -72,7 +72,7 @@ const pilares = [
   {
     n: "02",
     t: "Motivação e Engajamento",
-    d: "O que realmente move as pessoas — e como sustentar isso no dia a dia.",
+    d: "O que realmente move as pessoas e como sustentar isso no dia a dia.",
   },
   {
     n: "03",
@@ -349,7 +349,7 @@ function Index() {
                 {...fadeUp(1.2)}
                 className="mt-10 max-w-xl font-display text-2xl leading-snug text-navy-deep md:text-3xl"
               >
-                Liderança não se improvisa —{" "}
+                Liderança não se improvisa,{" "}
                 <em className="not-italic text-sage-deep">se desenvolve.</em>
               </motion.p>
               <motion.p
@@ -498,13 +498,13 @@ function Index() {
               <div className="border border-sage/30 bg-[#0a1422] p-2.5">
                 <img
                   src={discReport}
-                  alt="Exemplo de relatório DISC — análise de perfil comportamental"
+                  alt="Exemplo de relatório DISC com análise de perfil comportamental"
                   className="block h-auto w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <figcaption className="mt-3 text-center text-xs text-cream/50">
-                Exemplo de relatório individual — entregue a cada participante
+                Exemplo de relatório individual, entregue a cada participante
               </figcaption>
             </figure>
           </Reveal>
@@ -556,12 +556,12 @@ function Index() {
               <p>
                 Educadora empresarial com graduação e MBA em Finanças e pós-graduação em Gestão de
                 Pessoas. Mais de 15 anos de experiência em gestão. Desde 2018, desenvolve líderes,
-                empreendedores e profissionais liberais no Brasil e no exterior — com foco em
+                empreendedores e profissionais liberais no Brasil e no exterior, com foco em
                 crescimento estruturado, posicionamento estratégico e resultados sustentáveis.
               </p>
               <p>
                 Uma abordagem prática e orientada à ação, que promove mudança de mentalidade e
-                elevação do nível de consciência profissional — refletindo diretamente na
+                elevação do nível de consciência profissional, refletindo diretamente na
                 performance.
               </p>
             </div>
@@ -717,10 +717,11 @@ function Index() {
                 target="_blank"
                 rel="noreferrer"
                 key={l.lote}
-                className={`relative flex flex-col border p-8 transition ${l.destaque
+                className={`relative flex flex-col border p-8 transition ${
+                  l.destaque
                     ? "border-sage bg-sage/5 hover:bg-sage/10"
                     : "border-cream/15 hover:border-sage/60 hover:bg-cream/5"
-                  }`}
+                }`}
               >
                 {l.tag && (
                   <span className="absolute -top-3 left-8 bg-sage px-3 py-1 text-[10px] tracking-[0.28em] text-navy-deep">
@@ -731,8 +732,9 @@ function Index() {
                   <p className="text-[11px] tracking-[0.32em] text-sage">{l.lote}</p>
                   {l.status && (
                     <span
-                      className={`inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.22em] ${l.destaque ? "text-sage" : "text-cream/45"
-                        }`}
+                      className={`inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.22em] ${
+                        l.destaque ? "text-sage" : "text-cream/45"
+                      }`}
                     >
                       {l.destaque && (
                         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sage" />
