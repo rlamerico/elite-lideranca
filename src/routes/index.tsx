@@ -18,13 +18,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Curso presencial de liderança em Cachoeirinha/RS, 10 de outubro. 8h de conteúdo prático: comunicação, engajamento, perfil comportamental e autoliderança.",
+          "Curso presencial de liderança em Gravataí/RS no Sindilojas, 07 de novembro. 8h de conteúdo prático: comunicação, engajamento, perfil comportamental e autoliderança.",
       },
       { property: "og:title", content: "E.LI.TE: Evolua, Lidere, Transforme" },
       {
         property: "og:description",
         content:
-          "Liderança não se improvisa, se desenvolve. Curso presencial de 8h com Paula Tamara em Cachoeirinha/RS.",
+          "Liderança não se improvisa, se desenvolve. Curso presencial de 8h com Paula Tamara em Gravataí/RS no Sindilojas.",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
@@ -385,9 +385,9 @@ function Index() {
               className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep lg:mb-2"
             >
               {[
-                { k: "Data", v: "10 out · 2026" },
+                { k: "Data", v: "07 nov · 2026" },
                 { k: "Horário", v: "08h30 às 17h30" },
-                { k: "Local", v: "ACC · Cachoeirinha/RS" },
+                { k: "Local", v: "Sindilojas · Gravataí/RS" },
                 { k: "Vagas", v: "Limitadas" },
               ].map((it) => (
                 <div key={it.k} className="bg-cream p-6">
