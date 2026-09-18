@@ -18,13 +18,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Curso presencial de liderança em Gravataí/RS no Sindilojas, 07 de novembro. 8h de conteúdo prático: comunicação, engajamento, perfil comportamental e autoliderança.",
+          "Curso presencial de liderança: 10 de outubro em Cachoeirinha (ACC) e 07 de novembro em Gravataí (Sindilojas). 8h de conteúdo prático: comunicação, engajamento, perfil comportamental e autoliderança.",
       },
       { property: "og:title", content: "E.LI.TE: Evolua, Lidere, Transforme" },
       {
         property: "og:description",
         content:
-          "Liderança não se improvisa, se desenvolve. Curso presencial de 8h com Paula Tamara em Gravataí/RS no Sindilojas.",
+          "Liderança não se improvisa, se desenvolve. Curso presencial de 8h com Paula Tamara: 10 out em Cachoeirinha (ACC) e 07 nov em Gravataí (Sindilojas).",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
@@ -252,7 +252,7 @@ function Index() {
           </div>
           <div className="flex items-center gap-4">
             <div className="hidden border border-sage/60 px-4 py-2 text-[11px] tracking-[0.28em] text-navy-deep md:block">
-              07 NOV · 2026
+              10 OUT · 07 NOV · 2026
             </div>
             <a
               href={SYMPLA_URL}
@@ -380,24 +380,44 @@ function Index() {
             </div>
 
             {/* meta column */}
-            <motion.div
-              {...fadeUp(0.7)}
-              className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep lg:mb-2"
-            >
-              {[
-                { k: "Data", v: "07 nov · 2026" },
-                { k: "Horário", v: "08h30 às 17h30" },
-                { k: "Local", v: "Sindilojas · Gravataí/RS" },
-                { k: "Vagas", v: "Limitadas" },
-              ].map((it) => (
-                <div key={it.k} className="bg-cream p-6">
-                  <p className="text-[10px] tracking-[0.28em] text-sage-deep">
-                    {it.k.toUpperCase()}
-                  </p>
-                  <p className="mt-2 font-display text-lg">{it.v}</p>
-                </div>
-              ))}
-            </motion.div>
+            <div className="space-y-4 lg:mb-2">
+              <motion.div
+                {...fadeUp(0.7)}
+                className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep"
+              >
+                {[
+                  { k: "Data", v: "10 out · 2026" },
+                  { k: "Horário", v: "08h30 às 17h30" },
+                  { k: "Local", v: "ACC · Cachoeirinha/RS" },
+                  { k: "Vagas", v: "Limitadas" },
+                ].map((it) => (
+                  <div key={it.k} className="bg-cream p-6">
+                    <p className="text-[10px] tracking-[0.28em] text-sage-deep">
+                      {it.k.toUpperCase()}
+                    </p>
+                    <p className="mt-2 font-display text-lg">{it.v}</p>
+                  </div>
+                ))}
+              </motion.div>
+              <motion.div
+                {...fadeUp(0.8)}
+                className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep"
+              >
+                {[
+                  { k: "Data", v: "07 nov · 2026" },
+                  { k: "Horário", v: "08h30 às 17h30" },
+                  { k: "Local", v: "Sindilojas · Gravataí/RS" },
+                  { k: "Vagas", v: "Limitadas" },
+                ].map((it) => (
+                  <div key={it.k} className="bg-cream p-6">
+                    <p className="text-[10px] tracking-[0.28em] text-sage-deep">
+                      {it.k.toUpperCase()}
+                    </p>
+                    <p className="mt-2 font-display text-lg">{it.v}</p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
         <div className="absolute inset-x-0 bottom-0 h-px bg-sage/50" />
