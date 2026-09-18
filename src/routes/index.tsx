@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Gift } from "lucide-react";
 import { HoverPlayVideo } from "@/components/hover-play-video";
@@ -18,13 +18,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Curso presencial de liderança em Gravataí/RS no Sindilojas, 07 de novembro. 8h de conteúdo prático: comunicação, engajamento, perfil comportamental e autoliderança.",
+          "Curso presencial de liderança: 10 de outubro em Cachoeirinha (ACC) e 07 de novembro em Gravataí (Sindilojas). 8h de conteúdo prático: comunicação, engajamento, perfil comportamental e autoliderança.",
       },
       { property: "og:title", content: "E.LI.TE: Evolua, Lidere, Transforme" },
       {
         property: "og:description",
         content:
-          "Liderança não se improvisa, se desenvolve. Curso presencial de 8h com Paula Tamara em Gravataí/RS no Sindilojas.",
+          "Liderança não se improvisa, se desenvolve. Curso presencial de 8h com Paula Tamara: 10 out em Cachoeirinha (ACC) e 07 nov em Gravataí (Sindilojas).",
       },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
@@ -195,6 +195,7 @@ function Reveal({
 
 function StickyCta() {
   const [show, setShow] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   useEffect(() => {
     const onScroll = () => setShow(window.scrollY > 640);
     onScroll();
@@ -202,36 +203,108 @@ function StickyCta() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const eventos = [
+    {
+      data: "10 out · 2026",
+      local: "ACC · Cachoeirinha/RS",
+      url: SYMPLA_URL,
+    },
+    {
+      data: "07 nov · 2026",
+      local: "Sindilojas · Gravataí/RS",
+      url: SYMPLA_URL,
+    },
+  ];
+
   return (
-    <motion.div
-      aria-hidden={!show}
-      initial={false}
-      animate={show ? { y: 0, opacity: 1 } : { y: "120%", opacity: 0 }}
-      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 bottom-0 z-40 border-t border-sage/30 bg-navy-deep/95 backdrop-blur supports-[backdrop-filter]:bg-navy-deep/80"
-    >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-10">
-        <div className="min-w-0">
-          <p className="text-[10px] uppercase tracking-[0.28em] text-sage">
-            1º lote · melhor preço
-          </p>
-          <p className="truncate font-display text-base text-cream md:text-lg">
-            12x R$ 80,67 <span className="text-cream/50">ou R$ 780 à vista</span>
-          </p>
+    <>
+      <motion.div
+        aria-hidden={!show}
+        initial={false}
+        animate={show ? { y: 0, opacity: 1 } : { y: "120%", opacity: 0 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className="fixed inset-x-0 bottom-0 z-40 border-t border-sage/30 bg-navy-deep/95 backdrop-blur supports-[backdrop-filter]:bg-navy-deep/80"
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 md:px-10">
+          <div className="min-w-0">
+            <p className="text-[10px] uppercase tracking-[0.28em] text-sage">
+              1º lote · melhor preço
+            </p>
+            <p className="truncate font-display text-base text-cream md:text-lg">
+              12x R$ 80,67 <span className="text-cream/50">ou R$ 780 à vista</span>
+            </p>
+          </div>
+          <button
+            onClick={() => setOpenModal(!openModal)}
+            className="group relative inline-flex shrink-0 items-center gap-2 bg-sage px-5 py-3 text-xs font-medium uppercase tracking-[0.18em] text-navy-deep transition hover:bg-cream"
+          >
+            Garantir vaga
+            <span aria-hidden className="transition group-hover:translate-x-1">
+              →
+            </span>
+          </button>
         </div>
-        <a
-          href={SYMPLA_URL}
-          target="_blank"
-          rel="noreferrer"
-          className="group inline-flex shrink-0 items-center gap-2 bg-sage px-5 py-3 text-xs font-medium uppercase tracking-[0.18em] text-navy-deep transition hover:bg-cream"
-        >
-          Garantir vaga
-          <span aria-hidden className="transition group-hover:translate-x-1">
-            →
-          </span>
-        </a>
-      </div>
-    </motion.div>
+      </motion.div>
+
+      {/* Modal de seleção de evento */}
+      <AnimatePresence>
+        {openModal && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 10 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-end md:items-center justify-center md:pb-20 pb-20"
+          >
+            {/* Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setOpenModal(false)}
+              className="absolute inset-0 bg-black/20"
+            />
+
+            {/* Modal card */}
+            <motion.div className="relative w-full max-w-md bg-cream border border-sage/40 md:rounded-lg mx-4">
+              <div className="px-6 py-8">
+                <h3 className="font-display text-2xl text-navy-deep mb-2">Escolha sua data</h3>
+                <p className="text-sm text-navy-deep/60 mb-6">Selecione o evento de sua preferência</p>
+
+                <div className="space-y-3">
+                  {eventos.map((evento, i) => (
+                    <a
+                      key={i}
+                      href={evento.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={() => setOpenModal(false)}
+                      className="block group p-4 border border-sage/30 hover:border-sage hover:bg-sage/5 transition rounded"
+                    >
+                      <p className="text-[11px] uppercase tracking-[0.24em] text-sage-deep">Data</p>
+                      <p className="font-display text-lg text-navy-deep mt-1">{evento.data}</p>
+                      <p className="text-[11px] uppercase tracking-[0.24em] text-sage-deep mt-3">Local</p>
+                      <p className="font-medium text-navy-deep mt-1">{evento.local}</p>
+                      <div className="mt-4 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.18em] text-sage group-hover:text-navy-deep">
+                        Garantir vaga
+                        <span aria-hidden className="transition group-hover:translate-x-1">→</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => setOpenModal(false)}
+                  className="mt-6 w-full py-3 text-sm uppercase tracking-[0.18em] text-navy-deep/60 hover:text-navy-deep transition"
+                >
+                  Fechar
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
 
@@ -252,7 +325,7 @@ function Index() {
           </div>
           <div className="flex items-center gap-4">
             <div className="hidden border border-sage/60 px-4 py-2 text-[11px] tracking-[0.28em] text-navy-deep md:block">
-              07 NOV · 2026
+              10 OUT · 07 NOV · 2026
             </div>
             <a
               href={SYMPLA_URL}
@@ -358,18 +431,31 @@ function Index() {
               >
                 Transforme a forma como você comunica, engaja e gera resultados através das pessoas.
               </motion.p>
-              <motion.div {...fadeUp(1.4)} className="mt-10 flex flex-wrap items-center gap-4">
-                <a
-                  href={SYMPLA_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group inline-flex items-center gap-3 bg-navy-deep px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-cream transition hover:bg-sage-deep"
-                >
-                  Garantir minha vaga
-                  <span aria-hidden className="transition group-hover:translate-x-1">
-                    →
-                  </span>
-                </a>
+              <motion.div {...fadeUp(1.4)} className="mt-10 flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href={SYMPLA_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex items-center gap-2 bg-navy-deep px-5 py-3 text-xs font-medium uppercase tracking-[0.2em] text-cream transition hover:bg-sage-deep md:px-6 md:py-4 md:text-sm"
+                  >
+                    Vaga • 10 out
+                    <span aria-hidden className="transition group-hover:translate-x-1">
+                      →
+                    </span>
+                  </a>
+                  <a
+                    href={SYMPLA_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex items-center gap-2 bg-navy-deep px-5 py-3 text-xs font-medium uppercase tracking-[0.2em] text-cream transition hover:bg-sage-deep md:px-6 md:py-4 md:text-sm"
+                  >
+                    Vaga • 07 nov
+                    <span aria-hidden className="transition group-hover:translate-x-1">
+                      →
+                    </span>
+                  </a>
+                </div>
                 <a
                   href="#conteudo"
                   className="text-sm uppercase tracking-[0.2em] text-navy-deep/80 underline-offset-8 hover:underline"
@@ -380,24 +466,48 @@ function Index() {
             </div>
 
             {/* meta column */}
-            <motion.div
-              {...fadeUp(0.7)}
-              className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep lg:mb-2"
-            >
-              {[
-                { k: "Data", v: "07 nov · 2026" },
-                { k: "Horário", v: "08h30 às 17h30" },
-                { k: "Local", v: "Sindilojas · Gravataí/RS" },
-                { k: "Vagas", v: "Limitadas" },
-              ].map((it) => (
-                <div key={it.k} className="bg-cream p-6">
-                  <p className="text-[10px] tracking-[0.28em] text-sage-deep">
-                    {it.k.toUpperCase()}
-                  </p>
-                  <p className="mt-2 font-display text-lg">{it.v}</p>
-                </div>
-              ))}
-            </motion.div>
+            <div className="space-y-4 lg:mb-2">
+              <motion.div
+                {...fadeUp(0.7)}
+                whileHover={{ y: -4, boxShadow: "0 12px 24px rgba(20,20,40,0.12)" }}
+                transition={{ duration: 0.3, ease: EASE }}
+                className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep"
+              >
+                {[
+                  { k: "Data", v: "10 out · 2026" },
+                  { k: "Horário", v: "08h30 às 17h30" },
+                  { k: "Local", v: "ACC · Cachoeirinha/RS" },
+                  { k: "Vagas", v: "Limitadas" },
+                ].map((it) => (
+                  <div key={it.k} className="bg-cream p-6">
+                    <p className="text-[10px] tracking-[0.28em] text-sage-deep">
+                      {it.k.toUpperCase()}
+                    </p>
+                    <p className="mt-2 font-display text-lg">{it.v}</p>
+                  </div>
+                ))}
+              </motion.div>
+              <motion.div
+                {...fadeUp(0.8)}
+                whileHover={{ y: -4, boxShadow: "0 12px 24px rgba(20,20,40,0.12)" }}
+                transition={{ duration: 0.3, ease: EASE }}
+                className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep"
+              >
+                {[
+                  { k: "Data", v: "07 nov · 2026" },
+                  { k: "Horário", v: "08h30 às 17h30" },
+                  { k: "Local", v: "Sindilojas · Gravataí/RS" },
+                  { k: "Vagas", v: "Limitadas" },
+                ].map((it) => (
+                  <div key={it.k} className="bg-cream p-6">
+                    <p className="text-[10px] tracking-[0.28em] text-sage-deep">
+                      {it.k.toUpperCase()}
+                    </p>
+                    <p className="mt-2 font-display text-lg">{it.v}</p>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
         <div className="absolute inset-x-0 bottom-0 h-px bg-sage/50" />
@@ -717,10 +827,11 @@ function Index() {
                 target="_blank"
                 rel="noreferrer"
                 key={l.lote}
-                className={`relative flex flex-col border p-8 transition ${l.destaque
+                className={`relative flex flex-col border p-8 transition ${
+                  l.destaque
                     ? "border-sage bg-sage/5 hover:bg-sage/10"
                     : "border-cream/15 hover:border-sage/60 hover:bg-cream/5"
-                  }`}
+                }`}
               >
                 {l.tag && (
                   <span className="absolute -top-3 left-8 bg-sage px-3 py-1 text-[10px] tracking-[0.28em] text-navy-deep">
@@ -731,8 +842,9 @@ function Index() {
                   <p className="text-[11px] tracking-[0.32em] text-sage">{l.lote}</p>
                   {l.status && (
                     <span
-                      className={`inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.22em] ${l.destaque ? "text-sage" : "text-cream/45"
-                        }`}
+                      className={`inline-flex items-center gap-1.5 text-[10px] uppercase tracking-[0.22em] ${
+                        l.destaque ? "text-sage" : "text-cream/45"
+                      }`}
                     >
                       {l.destaque && (
                         <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sage" />
