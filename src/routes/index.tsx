@@ -396,6 +396,8 @@ function Index() {
             <div className="space-y-4 lg:mb-2">
               <motion.div
                 {...fadeUp(0.7)}
+                whileHover={{ y: -4, boxShadow: "0 12px 24px rgba(20,20,40,0.12)" }}
+                transition={{ duration: 0.3, ease: EASE }}
                 className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep"
               >
                 {[
@@ -414,6 +416,8 @@ function Index() {
               </motion.div>
               <motion.div
                 {...fadeUp(0.8)}
+                whileHover={{ y: -4, boxShadow: "0 12px 24px rgba(20,20,40,0.12)" }}
+                transition={{ duration: 0.3, ease: EASE }}
                 className="grid grid-cols-2 gap-px border border-sage/40 bg-sage/40 text-navy-deep"
               >
                 {[
